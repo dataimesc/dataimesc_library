@@ -1,4 +1,4 @@
-get_data<-function(number, year_i,year_f){
+get_data<-function(serie, year_init,year_last){
   if(!require("tidyverse")) install.packages("tidyverse")
   if(!require("jsonlite")) install.packages("jsonlite")
   if(!require("httr")) install.packages("httr")
