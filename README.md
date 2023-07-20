@@ -12,5 +12,6 @@ install_github("dataimesc/dataimesc_library/dataimesc")
 require(dataimesc)
 
 #a função get_data recebe 3 parâmetros get_data(numero_da_serie,ano_inicial,ano_final)
+
 table<-get_data(serie=100,begin=2015,end=2019)
 print(table)
