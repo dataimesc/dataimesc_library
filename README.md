@@ -4,6 +4,7 @@ O package DataImesc no R permite acessar e manipular os dados do repositório de
 
 A sintaxe para fazer a requisição dos dados é a seguinte.
 
+
 library(devtools)
 install_github("dataimesc/dataimesc_library/dataimesc")
 require(dataimesc)
