@@ -6,7 +6,7 @@ get_data<-function(serie, begin, end){
   require(httr)
   json<-httr::GET(str_interp('https://dataimesc.imesc.ma.gov.br/getData?id=${serie}&scope=4&from=${begin}&to=${end}'), accept_json())
   jsonInfoImg <- content(json, type="application/json")
-  table_json<-unlist(jsonInfoImg['values'])
+  table_json<-jsonInfoImg['values']
   return(table_json)
 }
 
