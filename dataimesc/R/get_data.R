@@ -13,7 +13,6 @@ get_data<-function(serie, begin, end){
   table2<-jsonInfoImg$values
   df <- bind_rows(table2)
   df <- as.data.frame.table(table2)
-  df <- df %>% rename(Year = names(.), Value = .)
   df<-as.data.frame(df)
   rownames(df) <- names(table2)
   return(df)
