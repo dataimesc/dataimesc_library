@@ -11,8 +11,9 @@ get_data<-function(serie, begin, end){
   require(httr)
   json<-httr::GET(str_interp('https://dataimesc.imesc.ma.gov.br/getData?id=${serie}&scope=4&from=${begin}&to=${end}'), accept_json())
   jsonInfoImg <- content(json, type="application/json")
-  table2<-jsonInfoImg$values
-  df <- bind_rows(table2)
+  table2<-jsonInfoImg['values']
+  table3<-table2$values
+  df <- bind_rows(table3)
   df <- as.data.frame.table(df)
   df2<-as.data.frame(df)
   df <- df %>% rename(Year = names(.), Value = .)
