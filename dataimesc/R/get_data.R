@@ -2,6 +2,8 @@ get_data<-function(serie, begin, end){
   if(!require("tidyverse")) install.packages("tidyverse")
   if(!require("jsonlite")) install.packages("jsonlite")
   if(!require("httr")) install.packages("httr")
+  if(!require("dplyr")) install.packages("dplyr")
+  if(!require("purrr")) install.packages("purrr")
   require(jsonlite)
   library(dplyr)
   library(purrr)
