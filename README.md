@@ -13,5 +13,5 @@ A sintaxe para fazer a requisição dos dados é a seguinte.
 
 O resultado será semelhante ao seguinte.
 
-![image](https://github.com/dataimesc/dataimesc_library/assets/137085586/d12dc785-0f0a-4fb3-8972-88e6deda115b)
+![image](https://github.com/dataimesc/dataimesc_library/assets/137085586/5389a821-bb94-4a50-83aa-98fa30abe330)
 
