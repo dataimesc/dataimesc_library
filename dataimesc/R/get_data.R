@@ -1,5 +1,4 @@
 get_data<-function(serie, begin, end){
-  print('começou')
   if(!require("tidyverse")) install.packages("tidyverse")
   if(!require("jsonlite")) install.packages("jsonlite")
   if(!require("httr")) install.packages("httr")
@@ -13,12 +12,9 @@ get_data<-function(serie, begin, end){
   jsonInfoImg <- content(json, type="application/json")
   table2<-jsonInfoImg['values']
   table3<-table2$values
-  df <- bind_rows(table3)
-  df <- as.data.frame.table(df)
-  df2<-as.data.frame(df)
-  df <- df %>% rename(Year = names(.), Value = .)
-  rownames(df2) <- names(table2)
-  return(df2)
+  df <- as.data.frame(bind_rows(table3))
+  rownames(df) <- names(table3)
+  return(df)
 }
 
 
