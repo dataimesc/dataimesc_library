@@ -15,6 +15,7 @@ get_data<-function(serie, begin, end){
   df <- bind_rows(table2)
   df <- as.data.frame.table(df)
   df2<-as.data.frame(df)
+  df <- df %>% rename(Year = names(.), Value = .)
   rownames(df2) <- names(table2)
   return(df2)
 }
