@@ -13,7 +13,7 @@ get_data<-function(serie, begin, end){
   jsonInfoImg <- content(json, type="application/json")
   table2<-jsonInfoImg$values
   df <- bind_rows(table2)
-  df <- as.data.frame.table(table2)
+  df <- as.data.frame.table(df)
   df2<-as.data.frame(df)
   rownames(df2) <- names(table2)
   return(df2)
