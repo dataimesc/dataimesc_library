@@ -1,4 +1,5 @@
 get_data<-function(serie, begin, end){
+  print('começou')
   if(!require("tidyverse")) install.packages("tidyverse")
   if(!require("jsonlite")) install.packages("jsonlite")
   if(!require("httr")) install.packages("httr")
