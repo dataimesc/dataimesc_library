@@ -10,6 +10,8 @@ A sintaxe para fazer a requisição dos dados é a seguinte.
 	#a função get_data recebe 3 parâmetros get_data(serie=numero_da_serie,begin=ano_inicial,end=ano_final)
 	table<-get_data(serie=100,begin=2015,end=2019)
 	print(table)
+* O parâmetro geo é opcional e pode assumir os valores de "Brazil", "States", "Region", "City". Caso não seja especificado, o default é o parâmetro City.
+
 
 O resultado será semelhante ao seguinte.
 
