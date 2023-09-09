@@ -1,4 +1,4 @@
-get_data<-function(serie, begin, end, geo="City"){
+get_data<-function(serie, begin, end, geo="City",geo.filter="None"){
   if(!require("tidyverse")) install.packages("tidyverse")
   if(!require("jsonlite")) install.packages("jsonlite")
   if(!require("httr")) install.packages("httr")
@@ -18,6 +18,10 @@ get_data<-function(serie, begin, end, geo="City"){
   table3<-table2$values
   df <- as.data.frame(bind_rows(table3))
   rownames(df) <- names(table3)
+  if(geo.filter!="None"){
+    df2<- (df[geo.filter,])
+    df2<- replace(df2, is.na(df2), "No values")
+    return(df2)
+    }
   return(df)
 }
-
