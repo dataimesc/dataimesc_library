@@ -1,4 +1,4 @@
-get_data<-function(serie, begin, end){
+get_data<-function(serie, begin, end, geo="City"){
   if(!require("tidyverse")) install.packages("tidyverse")
   if(!require("jsonlite")) install.packages("jsonlite")
   if(!require("httr")) install.packages("httr")
@@ -8,7 +8,11 @@ get_data<-function(serie, begin, end){
   library(dplyr)
   library(purrr)
   require(httr)
-  json<-httr::GET(str_interp('https://dataimesc.imesc.ma.gov.br/getData?id=${serie}&scope=4&from=${begin}&to=${end}'), accept_json())
+  if(geo=="City"){city<-"4"}
+  else if(geo=="States"){city<-"3"}
+  else if(geo=="Region"){city<-"2"}
+  else if(geo=="Brazil"){city<-"1"}
+  json<-httr::GET(str_interp('https://dataimesc.imesc.ma.gov.br/getData?id=${serie}&scope=${city}&from=${begin}&to=${end}'), accept_json())
   jsonInfoImg <- content(json, type="application/json")
   table2<-jsonInfoImg['values']
   table3<-table2$values
@@ -16,6 +20,4 @@ get_data<-function(serie, begin, end){
   rownames(df) <- names(table3)
   return(df)
 }
-
-
 
