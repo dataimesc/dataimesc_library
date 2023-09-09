@@ -7,7 +7,7 @@ A sintaxe para fazer a requisição dos dados é a seguinte.
 	library(devtools)
 	install_github("dataimesc/dataimescr/dataimesc")
 	require(dataimesc)
-	#a função get_data recebe 3 parâmetros get_data(serie=numero_da_serie,begin=ano_inicial,end=ano_final, geo="City")
+	#a função get_data recebe 3 parâmetros get_data(serie=numero_da_serie,begin=ano_inicial,end=ano_final, geo="City",geo.filter="2100204")
 	table<-get_data(serie=100,	
  			begin=2015,	
     		end=2019,	
