@@ -11,10 +11,11 @@ A sintaxe para fazer a requisição dos dados é a seguinte.
 	table<-get_data(serie=100,	
  			begin=2015,	
     		end=2019,	
-       		geo="Region")	
+       		geo="Brazil",
+	 	geo.filter="BR")	
 	print(table)
 * O parâmetro geo é opcional e pode assumir os valores de "Brazil", "States", "Region", "City". Caso não seja especificado, o default é o parâmetro City.
-
+* O parâmetro geo.filter é opcional e recebe o código do recorte territorial desejado Ex.("BR","ES","NE","2100204")
 
 O resultado será semelhante ao seguinte.
 
