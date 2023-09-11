@@ -1,4 +1,4 @@
-get_data<-function(serie, begin, end, geo="City",geo.filter="None"){
+get_data<-function(serie, begin="2000", end="2025", geo="City",geo.filter="None"){
   if(!require("tidyverse")) install.packages("tidyverse")
   if(!require("jsonlite")) install.packages("jsonlite")
   if(!require("httr")) install.packages("httr")
