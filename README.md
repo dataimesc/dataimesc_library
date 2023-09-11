@@ -21,3 +21,12 @@ O resultado será semelhante ao seguinte.
 
 ![image](https://github.com/dataimesc/dataimesc_library/assets/137085586/5389a821-bb94-4a50-83aa-98fa30abe330)
 
+Caso deseje consultar informações sobre uma série, você pode utilizar a função info_imesc cuja chamada é dada pela seguinte forma
+```
+	library(devtools)
+	install_github("dataimesc/dataimescr/dataimesc")
+	require(dataimesc)
+	#No parâmetro serie você inputa o número da série que você deseja receber informações
+	data<-dataimesc::info_imesc(serie=100)
+	print(data)
+```
